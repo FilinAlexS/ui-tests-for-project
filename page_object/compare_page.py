@@ -23,6 +23,7 @@ class ComparePage(BasePage):
 
     @allure.step("Сheck whether different products have been added")
     def check_dif_added_products(self):
+        time.sleep(1)
         prod_1 = self.element(CompareLocators.COMPARE_PRODUCT_NAME_1).text
         prod_2 = self.element(CompareLocators.COMPARE_PRODUCT_NAME_2).text
         assert prod_1 != prod_2
