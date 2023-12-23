@@ -89,5 +89,5 @@ def browser(request):
 
     request.addfinalizer(fin)
 
-    with allure.step("Browser %s started" % browser_name):
+    with allure.step("Browser %s started on version %s" % (browser_name, version)):
         return driver
