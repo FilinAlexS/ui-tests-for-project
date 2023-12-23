@@ -4,7 +4,7 @@ from page_object.cart_page import CartPage
 
 @allure.feature('Cart page')
 @allure.story('Adding, deleting and checking cart')
-def test_product_comparison_page(browser):
+def test_cart_page(browser):
     cart = CartPage(browser)
     cart.open(browser.url)
     cart.add_n_element_cart(0, 5)

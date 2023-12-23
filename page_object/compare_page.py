@@ -14,6 +14,7 @@ class ComparePage(BasePage):
     def add_n_element_compare(self, element):
         list_elems = self.elements(CompareLocators.BUTTON_COMPARE_ADD)
         elem = list_elems[element]
+        time.sleep(0.5)
         self.click(elem)
 
     @allure.step("Click link 'product comparison'")
