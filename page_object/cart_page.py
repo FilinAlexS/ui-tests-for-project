@@ -19,6 +19,7 @@ class CartPage(BasePage):
             elem = list_elems[element]
             self.click(elem)
             count_items += 1
+            time.sleep(0.5)
             assert self.quantity_items_on_button_cart() == count_items
             count -= 1
 
