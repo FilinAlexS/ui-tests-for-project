@@ -45,6 +45,7 @@ class CartPage(BasePage):
     def go_to_cart(self):
         time.sleep(1)
         self.click(self.element(CartLocators.CART_BUTTON_TOP))
+        time.sleep(1)
         self.click(self.element(CartLocators.LINK_TO_CART))
 
     def quantity_items_on_button_cart(self):
