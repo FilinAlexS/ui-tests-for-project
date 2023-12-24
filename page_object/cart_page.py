@@ -15,6 +15,7 @@ class CartPage(BasePage):
     def add_n_element_cart(self, element, count=1):
         count_items = self.quantity_items_on_button_cart()
         while count > 0:
+            time.sleep(1)
             list_elems = self.elements(CartLocators.BUTTON_CART_ADD)
             elem = list_elems[element]
             self.click(elem)
