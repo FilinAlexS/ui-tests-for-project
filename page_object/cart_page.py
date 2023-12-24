@@ -44,9 +44,11 @@ class CartPage(BasePage):
     @allure.step("Go to the cart")
     def go_to_cart(self):
         time.sleep(1)
-        self.click(self.element(CartLocators.CART_BUTTON_TOP))
+        with allure.step('Click cart button top'):
+            self.click(self.element(CartLocators.CART_BUTTON_TOP))
         time.sleep(1)
-        self.click(self.element(CartLocators.LINK_TO_CART))
+        with allure.step('Click link to cart'):
+            self.click(self.element(CartLocators.LINK_TO_CART))
 
     def quantity_items_on_button_cart(self):
         time.sleep(0.5)
