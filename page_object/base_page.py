@@ -35,7 +35,7 @@ class BasePage:
     def element(self, locator: tuple):
         try:
             self.logger.info("%s: Find element: %s" % (self.class_name, str(locator)))
-            return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+            return WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located(locator))
         except TimeoutException:
             self.logger.error("%s: Didn't wait to see the element '%s'" % (self.class_name, str(locator)))
             allure.attach(body=self.driver.get_screenshot_as_png(),
@@ -47,7 +47,7 @@ class BasePage:
     def elements(self, locator: tuple):
         try:
             self.logger.info("%s: Find all elements: %s" % (self.class_name, str(locator)))
-            return WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(locator))
+            return WebDriverWait(self.driver, 3).until(EC.visibility_of_all_elements_located(locator))
         except TimeoutException:
             self.logger.error("%s: Didn't wait to see the elements %s" % (self.class_name, str(locator)))
             allure.attach(body=self.driver.get_screenshot_as_png(),
@@ -64,7 +64,7 @@ class BasePage:
         try:
             self.logger.info("%s: Verify the text in the element %s matches the expected '%s'." % (
                 self.class_name, str(locator), text))
-            return WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(locator, text))
+            return WebDriverWait(self.driver, 3).until(EC.text_to_be_present_in_element(locator, text))
         except TimeoutException:
             self.logger.error("%s: The text in the element %s does not match the expected '%s'" % (
                 self.class_name, str(locator), text))
