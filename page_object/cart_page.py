@@ -20,8 +20,9 @@ class CartPage(BasePage):
             elem = list_elems[element]
             self.click(elem)
             count_items += 1
-            time.sleep(0.5)
-            assert self.quantity_items_on_button_cart() == count_items
+            time.sleep(1)
+            on_web = self.quantity_items_on_button_cart()
+            assert on_web == count_items
             count -= 1
 
     @allure.step("Check quantity product in cart")
