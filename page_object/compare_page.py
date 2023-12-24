@@ -20,6 +20,7 @@ class ComparePage(BasePage):
 
     @allure.step("Click link 'product comparison'")
     def click_link_comparison(self):
+        time.sleep(1)
         self.click(self.element(CompareLocators.COMPARE_PAGE_LINK))
 
     @allure.step("Сheck whether different products have been added")
