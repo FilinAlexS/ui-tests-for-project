@@ -33,9 +33,9 @@ class CartPage(BasePage):
     def remove_all_product(self):
         quantity_product = len(self.elements(CartLocators.QUANTITY_PRODUCT_IN_CART))
         while quantity_product > 0:
+            time.sleep(1)
             self.click(self.elements(CartLocators.REMOVE_PRODUCT)[0])
             quantity_product -= 1
-            time.sleep(0.5)
 
     @allure.step("Check that remove all products")
     def check_remove_all_product(self):
