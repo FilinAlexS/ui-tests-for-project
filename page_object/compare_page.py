@@ -12,6 +12,7 @@ class ComparePage(BasePage):
 
     @allure.step("Add n element to the comparison")
     def add_n_element_compare(self, element):
+        time.sleep(1)
         list_elems = self.elements(CompareLocators.BUTTON_COMPARE_ADD)
         elem = list_elems[element]
         time.sleep(0.5)
@@ -31,8 +32,8 @@ class ComparePage(BasePage):
     @allure.step("Delete n products")
     def remove_product(self, count):
         while count > 0:
+            time.sleep(1)
             a = self.elements(CompareLocators.COMPARE_DELETE_PROD)
             self.click(a[0])
             count -= 1
-            time.sleep(0.5)
         assert self.element(CompareLocators.COMPARE_NON_PROD).text == 'Continue'
