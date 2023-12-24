@@ -8,3 +8,4 @@ class CartLocators:
     QUANTITY_PRODUCT_IN_CART = (By.XPATH, "//*[@id='content']/form/div/table/tbody/tr")
     REMOVE_PRODUCT = (By.XPATH, "//*/table//button[2]")
     NON_PRODUCT = (By.XPATH, "//*/a[.='Continue']")
+    CONTINUE = 'Continue'

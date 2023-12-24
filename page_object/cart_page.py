@@ -17,8 +17,7 @@ class CartPage(BasePage):
         while count > 0:
             time.sleep(1)
             list_elems = self.elements(CartLocators.BUTTON_CART_ADD)
-            elem = list_elems[element]
-            self.click(elem)
+            self.click(list_elems[element])
             count_items += 1
             time.sleep(1)
             on_web = self.quantity_items_on_button_cart()
@@ -40,7 +39,7 @@ class CartPage(BasePage):
 
     @allure.step("Check that remove all products")
     def check_remove_all_product(self):
-        assert self.element(CartLocators.NON_PRODUCT).text == 'Continue'
+        self.verify_text_in_element(CartLocators.NON_PRODUCT, CartLocators.CONTINUE)
 
     @allure.step("Go to the cart")
     def go_to_cart(self):

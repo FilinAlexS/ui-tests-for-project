@@ -37,4 +37,4 @@ class ComparePage(BasePage):
             a = self.elements(CompareLocators.COMPARE_DELETE_PROD)
             self.click(a[0])
             count -= 1
-        assert self.element(CompareLocators.COMPARE_NON_PROD).text == 'Continue'
+        self.verify_text_in_element(CompareLocators.COMPARE_NON_PROD, CompareLocators.CONTINUE)

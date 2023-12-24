@@ -8,3 +8,4 @@ class CompareLocators:
     COMPARE_PRODUCT_NAME_2 = (By.XPATH, '//*[@id="content"]/table/tbody[1]//tr[1]/td[3]/a/strong')
     COMPARE_DELETE_PROD = (By.XPATH, "//*/a[.='Remove']")
     COMPARE_NON_PROD = (By.XPATH, "//*/a[.='Continue']")
+    CONTINUE = 'Continue'
